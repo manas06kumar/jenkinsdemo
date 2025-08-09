@@ -1,5 +1,12 @@
 pipeline {
     agent any
+     tools {
+	    maven 'M3'           // From Manage Jenkins → Tools
+  		jdk 'JDK17'          // Optional if your agent already has Java
+ 	 }
+ 	   environment {
+    IMAGE = 'jenkinsdemo:latest'
+  }
     stages {
         stage('Checkout') {
             steps {
