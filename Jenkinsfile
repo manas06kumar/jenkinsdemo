@@ -13,8 +13,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/manas06kumar/jenkinsdemo.git'
             }
         }
-        stage('Build App') {
+        stage('Build with maven App') {
             steps {
+				sh 'mvn -v'
                 sh 'mvn clean package -DskipTests'
             }
         }
